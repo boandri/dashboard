@@ -5,15 +5,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Boandri</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
 </head>
 
 <body>
     <h1>Welcome to Boandri's dashboard <b style='color:red;'>underconstruction</b></h1>
     <hr>
     <p style='color:blue; font-size: 20px;'><b>Dashboard</b></p>
-    This dashboard shows what projects swjang either working on or planning to begin<br />
+    This dashboard shows what projects swjang is either working on or planning to begin<br />
     <hr>
+    
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+<br/>
+
+<script>
+var xValues = ["Dashbord", "Home Automation", "Bug Tracker", "Blog", "Finatial Portal", "Inventory Control", "Work Order System"];
+var yValues = [100,30,50,20,60,15,30]; //,20,10,0];
+var barColors = ["red", "green","blue","orange","brown", "purple", "cyan"];
+
+let chrt = new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Front End Developer Projects"
+    }
+  }
+});
+
+</script>
+  <canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
+    <br/>
+    
+    <script>
+    var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+    var yValues = [55, 49, 44, 24, 15];
+    var barColors = [
+      "#b91d47",
+      "#00aba9",
+      "#2b5797",
+      "#e8c3b9",
+      "#1e7145"
+    ];
+    
+    let chrt2 = new Chart("myChart1", {
+      type: "doughnut",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: "World Wide Wine Production 2018"
+        }
+      }
+    });
+    
+    </script>
+    
 </body>
 
 </html>

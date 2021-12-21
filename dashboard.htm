@@ -11,19 +11,18 @@
 </head>
 
 <body>
-    <h1>Welcome to Boandri's dashboard <b style='color:red;'>underconstruction</b></h1>
+    <h1>Welcome to Boandri's dashboard<br/> <b style='color:turquoise;'>in progress</b></h1>
     <hr>
-    <p style='color:blue; font-size: 20px;'><b>Dashboard</b></p>
-    This dashboard shows what projects swjang is either working on or planning to begin<br />
-    <hr>
+    <p style='color:blue; font-size: 20px;'><b>Project progression chart</b></p>
+    
     
 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 <br/>
 
 <script>
-var xValues = ["Dashbord", "Home Automation", "Bug Tracker", "Blog", "Finatial Portal", "Inventory Control", "Work Order System"];
-var yValues = [100,30,50,20,60,15,30]; //,20,10,0];
-var barColors = ["red", "green","blue","orange","brown", "purple", "cyan"];
+var xValues = ["Dashbord", "Game", "Home Automation(IOT)", "Bug Tracker", "Blog", "Finatial Portal", "Inventory Control", "Work Order System"];
+var yValues = [50,1,1,1,1,1,1,1]; //,20,10,0];
+var barColors = ["red","yellow", "green","blue","orange","brown", "purple", "cyan"];
 
 let chrt = new Chart("myChart", {
   type: "bar",
@@ -44,12 +43,14 @@ let chrt = new Chart("myChart", {
 });
 
 </script>
+<hr>
+    <p style='color:blue; font-size: 20px;'><b>Time allocation chart</b></p>
   <canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
     <br/>
     
     <script>
-    var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-    var yValues = [55, 49, 44, 24, 15];
+    var xValues = ["Design", "Development", "Test & Debug", "Change request", "customer service"];
+    var yValues = [30, 50, 60, 24, 15];
     var barColors = [
       "#b91d47",
       "#00aba9",
@@ -70,7 +71,7 @@ let chrt = new Chart("myChart", {
       options: {
         title: {
           display: true,
-          text: "World Wide Wine Production 2018"
+          text: "Work types and hours-Dashboard"
         }
       }
     });

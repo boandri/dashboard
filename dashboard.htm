@@ -18,11 +18,25 @@
     
 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 <br/>
+<select id='selprj'>
+  <option>Dashboard</option>
+  <option>Game</option>
+  <option>Home Automation(IOT)</option>
+  <option>Bug Tracker</option>
+  <option>Blog</option>
+  <option>Financial Portal</option>
+  <option>Inventory Control</option>
+  <option>Work Order System</option>
+  </select>
+  <input id='newProgress' type='text' />
+  <button type="button" onclick="updateProgress()">Update Progress</button>
+<br/>
+<br/>
 
 <script>
-var xValues = ["Dashbord", "Game", "Home Automation(IOT)", "Bug Tracker", "Blog", "Finatial Portal", "Inventory Control", "Work Order System"];
-var yValues = [50,1,1,1,1,1,1,1]; //,20,10,0];
-var barColors = ["red","yellow", "green","blue","orange","brown", "purple", "cyan"];
+var xValues = ["Dashboard", "Game", "Home Automation(IOT)", "Bug Tracker", "Blog", "Financial Portal", "Inventory Control", "Work Order System"];
+var yValues = [50,100,1,1,1,1,1,1]; //,20,10,0];
+var barColors = ["red","pink", "green","blue","orange","brown", "purple", "cyan"];
 
 let chrt = new Chart("myChart", {
   type: "bar",
@@ -42,6 +56,16 @@ let chrt = new Chart("myChart", {
   }
 });
 
+function updateProgress() {
+    let prj;
+    let num;
+    prj = document.getElementById('selprj').selectedIndex;
+    num = document.getElementById('newProgress').value;
+
+    yValues[prj] = num;
+    chrt.update();
+}
+
 </script>
 <hr>
     <p style='color:blue; font-size: 20px;'><b>Time allocation chart</b></p>
@@ -49,9 +73,9 @@ let chrt = new Chart("myChart", {
     <br/>
     
     <script>
-    var xValues = ["Design", "Development", "Test & Debug", "Change request", "customer service"];
-    var yValues = [30, 50, 60, 24, 15];
-    var barColors = [
+    var xValues2 = ["Design", "Development", "Test & Debug", "Change request", "customer service"];
+    var yValues2 = [30, 50, 60, 24, 15];
+    var barColors2 = [
       "#b91d47",
       "#00aba9",
       "#2b5797",
@@ -62,10 +86,10 @@ let chrt = new Chart("myChart", {
     let chrt2 = new Chart("myChart1", {
       type: "doughnut",
       data: {
-        labels: xValues,
+        labels: xValues2,
         datasets: [{
-          backgroundColor: barColors,
-          data: yValues
+          backgroundColor: barColors2,
+          data: yValues2
         }]
       },
       options: {
